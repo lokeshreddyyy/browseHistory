@@ -100,11 +100,10 @@ class HistoryListApp extends Component {
     this.setState({historyList: filteredHistoryList})
   }
 
-  render() {
+ render() {
     const {searchInput, historyList} = this.state
-    // console.log(searchInput)
-    const searchResults = historyList.filter(eachHistoryItem =>
-      eachHistoryItem.title.includes(searchInput),
+    const searchHistory = historyList.filter(eachHistory =>
+      eachHistory.title.toLowerCase().includes(searchInput.toLowerCase()),
     )
 
     return (
